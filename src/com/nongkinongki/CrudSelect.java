@@ -37,6 +37,8 @@ public class CrudSelect extends ListActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+//		splashscreen
+		
 		//Mengeksekusi kelas GetData untuk mengirim permintaan ke MySQL
 		new GetData()
 				.execute("http://192.168.1.13/nongkinongki/android/getdata.php");
