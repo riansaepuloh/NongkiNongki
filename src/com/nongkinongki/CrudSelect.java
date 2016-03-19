@@ -16,8 +16,12 @@ import com.nongkinongki.util.ListAdapter;
 
 import android.app.ListActivity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -38,12 +42,40 @@ public class CrudSelect extends ListActivity {
 				.execute("http://192.168.1.13/nongkinongki/android/getdata.php");
 	}
 
+//	Untuk menampilkan option
+	
+	
 	//Method untuk mengeluarkan event saat list di click
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		Toast.makeText(getBaseContext(), "Terpilih " + Nama[position],
 				Toast.LENGTH_LONG).show();
 	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// TODO Auto-generated method stub
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.my_option_menu,menu);
+		return true;
+	}
+	
+	
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		if (item.getItemId()==R.id.newMessage){
+		     Toast.makeText(CrudSelect.this, "New Message Selected", 1000).show();
+		        } else if (item.getItemId() == R.id.setting) {
+		            Toast.makeText(CrudSelect.this, "Setting Selected", 1000).show();
+		        } else if (item.getItemId() == R.id.help) {
+		            startActivity(new Intent(this, HelpActivity.class));
+		        }
+		        
+		        return true;
+	}
+
+
 
 	//Class GetData yang menuruni kelas AsyncTask untuk melakukan requset data dari internet
 	private class GetData extends AsyncTask<String, Void, String> {

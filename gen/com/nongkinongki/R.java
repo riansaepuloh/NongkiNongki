@@ -30,7 +30,10 @@ public final class R {
     }
     public static final class id {
         public static final int action_settings=0x7f080004;
+        public static final int help=0x7f080007;
         public static final int icon=0x7f080001;
+        public static final int newMessage=0x7f080005;
+        public static final int setting=0x7f080006;
         public static final int subtitle=0x7f080003;
         public static final int thumbnail=0x7f080000;
         public static final int title=0x7f080002;
@@ -41,6 +44,7 @@ public final class R {
     }
     public static final class menu {
         public static final int crud_select=0x7f070000;
+        public static final int my_option_menu=0x7f070001;
     }
     public static final class string {
         public static final int action_settings=0x7f050001;
